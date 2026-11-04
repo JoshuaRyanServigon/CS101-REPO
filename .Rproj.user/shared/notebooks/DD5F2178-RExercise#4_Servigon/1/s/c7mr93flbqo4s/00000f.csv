@@ -1,7 +1,0 @@
-"0","# TODO: How many data points?"
-"0","n_age <- length(age)"
-"0","print(n_age)"
-"1","[1]"
-"1"," 50"
-"1","
-"

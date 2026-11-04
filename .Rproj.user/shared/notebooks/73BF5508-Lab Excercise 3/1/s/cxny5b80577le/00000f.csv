@@ -1,8 +1,0 @@
-"0","# TODO: From student, extract just the SECOND grade in the grades vector"
-"0","# in a single expression, e.g. student[[""grades""]][2] or student$grades[2]"
-"0","second_grade <- student[[""grades""]][2]"
-"0","print(second_grade)"
-"1","[1]"
-"1"," 92"
-"1","
-"
