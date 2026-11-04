@@ -1,0 +1,8 @@
+"0","# TODO: Find the minimum and the maximum value of worker's age"
+"0","min_age <- min(age)"
+"0","max_age <- max(age)"
+"0","print(min_age)"
+"1","[1]"
+"1"," 17"
+"1","
+"

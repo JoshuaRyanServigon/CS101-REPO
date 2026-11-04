@@ -1,0 +1,216 @@
+---
+title: "Lab Exercise 4"
+author: "Joshua Ryan V. Srvigon"
+date: "2026-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Part A: Creating Vectors and List
+
+a: Create a vector for the worker’s age.
+```{r}
+# TODO: Create a vector for the worker's age
+age <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20,
+         57, 49, 50, 37, 46, 25, 17, 37, 43, 53, 41, 51, 35, 24, 33, 41, 53, 40,
+         18, 44, 38, 41, 48, 27, 39, 19, 30, 61, 54, 58, 26, 18)
+print(age)
+```
+
+b: How many data points?
+```{r}
+# TODO: How many data points?
+n_age <- length(age)
+print(n_age)
+```
+
+c: Find the minimum and the maximum value of worker’s age.
+```{r}
+# TODO: Find the minimum and the maximum value of worker's age
+min_age <- min(age)
+max_age <- max(age)
+print(min_age)
+```
+
+d:  Access the 13th to 18th elements and 33rd to 35th elements of worker’s age.
+```{r}
+# TODO: Access the 13th to 18th elements and 33rd to 35th elements
+subset_age <- age[c(13:18, 33:35)]
+print(subset_age)
+```
+
+e: Access all but the 10th, 20th, 30th and 40th elements.
+```{r}
+# TODO: Access all but the 10th, 20th, 30th and 40th elements
+age_without <- age[-c(10, 20, 30, 40)]
+print(age_without)
+```
+
+f: Modify the 4th, 14th, 24th, and 44th elements with value = 0.
+```{r}
+# TODO: Modify the 4th, 14th, 24th, and 44th elements with value = 0
+age[c(4, 14, 24, 44)] <- 0
+print(age)
+```
+
+ Question #2:
+
+R has actually lots of built-in datasets.
+For example, the rivers data “gives the lengths (in miles) of 141 “major” rivers in North America, as compiled by the US Geological Survey”.
+Use data(rivers)
+```{r}
+# TODO: Load the built-in rivers dataset
+data(rivers)
+```
+
+Get the number of elements (length) in rivers, their sum (sum), mean (mean), median(median), variance(var), standard deviation(sd), minimum (min) and maximum (max).
+(Your answer here)
+```{r}
+# TODO: Get the length, sum, mean, median, variance, standard deviation,
+# minimum and maximum of rivers
+length(rivers)
+sum(rivers)
+mean(rivers)
+median(rivers)
+var(rivers)
+sd(rivers)
+min(rivers)
+max(rivers)
+```
+
+
+
+What is the result? The derived result must be in just one(1) vector name.
+
+```{r}
+# TODO: Put all the results above in just one (1) vector name
+rivers_stats <- c(length = length(rivers),
+                  sum    = sum(rivers),
+                  mean   = mean(rivers),
+                  median = median(rivers),
+                  var    = var(rivers),
+                  sd     = sd(rivers),
+                  min    = min(rivers),
+                  max    = max(rivers))
+print(rivers_stats)
+```
+
+Question #3
+1. Create vectors according to the above table.
+
+Fill in the ... with the values from the Forbes table, then change eval=FALSE to eval=TRUE in both chunks below.
+```{r}
+# TODO: Create vectors according to the Forbes table
+# Power Ranking
+ranking <- c(1:25)
+
+# Celebrity Names
+celebrity <- c(
+  "Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2",
+  "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent",
+  "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen",
+  "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas",
+  "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling",
+  "Brad Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Leno",
+  "Celine Dion", "Kobe Bryant"
+)
+
+# Annual Pay
+pay <- c(
+  67, 90, 225, 110, 90, 332, 302, 41, 52, 88,
+  55, 44, 55, 40, 233, 34, 40, 47, 75, 25,
+  39, 45, 32, 40, 31
+)
+
+# Display the vectors
+ranking
+celebrity
+pay
+```
+
+b. Modify the power ranking and pay of J.K. Rowling. Change power ranking to 15 and pay to 90.
+```{r}
+# TODO: Change J.K. Rowling's power ranking to 15 and pay to 90
+ranking[19] <- 15
+pay[19] <- 90
+
+# Display updated information
+ranking[19]
+celebrity[19]
+pay[19]
+```
+
+Question #4:
+
+Create a list of ten (10) vegetables you ate during your lifetime. If none, just list down the vegetables in your mind.
+(Your answer here)
+```{r}
+vegetables <- list(
+  "Carrot",
+  "Potato",
+  "Cabbage",
+  "Broccoli",
+  "Eggplant",
+  "Squash",
+  "Spinach",
+  "String Beans",
+  "Cauliflower",
+  "Okra"
+)
+
+vegetables
+```
+
+
+
+Create a list of ten (10) vegetables you ate during your lifetime. If none, just list down the vegetables in your mind.
+```{r}
+vegetables <- list(
+  "Carrot",
+  "Potato",
+  "Cabbage",
+  "Broccoli",
+  "Eggplant",
+  "Squash",
+  "Spinach",
+  "String Beans",
+  "Cauliflower",
+  "Okra"
+)
+
+vegetables
+```
+a. Add 2 additional vegetables after the last vegetables in the list. What is the result?
+```{r}
+vegetables <- append(vegetables, list("Onion", "Tomato"))
+
+vegetables
+```
+
+
+b. How many datapoints do you have?
+
+ANSWER: 12 datapoints.
+
+
+
+Add 4 additional vegetables after index 5. What is the result?
+(Your answer here)
+```{r}
+vegetables <- append(
+  vegetables,
+  list("Lettuce", "Cucumber", "Radish", "Bell Pepper"),
+  after = 5
+)
+
+vegetables
+```
+Answer: The four additional vegetables are inserted after the fifth item, Eggplant. The list now contains 16 vegetables.
+
+
+How many datapoints does your vegetable list have?
+
+Answer: 16 datapoints.
